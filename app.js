@@ -52,5 +52,6 @@ process.stdin.on('data', function (text) {
         process.exit(0);
     } else if(text === 'clear') {
         io.emit('clear');
+        data = [];
     }
 });
