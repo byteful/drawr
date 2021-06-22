@@ -1,0 +1,13 @@
+{
+  "name": "drawr",
+  "version": "1.0.0",
+  "main": "app.js",
+  "author": "byteful",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "~4.16.1",
+    "socket.io": "3.0.3"
+  }
+}
