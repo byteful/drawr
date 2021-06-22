@@ -4,7 +4,6 @@ let c, s;
 function setup() {
     createCanvas(windowWidth, windowHeight - 50);
     background(255);
-    select('#clearButton').mousePressed(() => socket.emit('clear'));
     c = select('#colorSelector');
     s = select('#sizeSlider');
 }

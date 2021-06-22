@@ -23,11 +23,6 @@ io.on('connection', (socket) => {
         data.push(msg);
     });
 
-    socket.on('clear', () => {
-        io.emit('clear');
-        data = [];
-    });
-
     socket.on('redraw', () => {
         data.forEach(msg => socket.emit('draw', msg));
     });
