@@ -47,3 +47,15 @@ function cleaner() {
 
     setTimeout(cleaner, 600000);
 }
+
+process.stdin.resume();
+process.stdin.setEncoding('utf8');
+
+process.stdin.on('data', function (text) {
+    text = text.trim();
+    if (text === 'quit' || text === 'close' || text === 'stop') {
+        process.exit(0);
+    } else if(text === 'clear') {
+        io.emit('clear');
+    }
+});
