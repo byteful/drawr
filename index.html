@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Drawr</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta charset="utf-8" />
-    <link rel='stylesheet' href='/css/style.css' type="text/css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous" />
-  </head>
-  <body>
-    <label for="colorSelector">Color Picker: </label><input type="color" id="colorSelector" />
-    <label for="sizeSlider">Size: </label><input type="range" min="1" max="10" value="1" step="0" id="sizeSlider" style="width: 150px;" />
+
+<head>
+	<title>Drawr</title>
+	<link rel="shortcut icon" type="image/png" href="/favicon.png" />
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://drawr.byteful.me">
+	<meta property="og:title" content="Drawr - A real-time collaborative drawing app.">
+	<meta property="og:description" content="Drawr lets the whole world draw stuff together, on the same canvas.">
+	<meta property="og:image" content="https://drawr.byteful.me/drawr.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta charset="utf-8" />
+	<link rel='stylesheet' href='/css/style.css' type="text/css" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+	 crossorigin="anonymous" />
+</head>
+
+<body>
+	  <div id="modifiers">
+      <div id="color-mod">
+		  <label for="colorSelector" style="position: absolute; top: 10px; left: 3px;">Color Picker: </label>
+      <input type="color" id="colorSelector" style="position: absolute; top: 9px; left: 103px;" />
+      </div>
+      <div id="size-mod">
+      <label for="sizeSlider" style="position: absolute; top: 12px; left: 260px;">Size: </label>
+      <input type="range" min="1" max="10" value="1" step="0" id="sizeSlider" style="position: absolute; top: 10px; left: 300px; width: 150px;" />
+      </div>
+    </div>
+    <p id="timer" style="position: absolute; top: 10px; right: 300px;">Time until reset: <strong>00:01</strong></p>
+    <p id="connections" style="position: absolute; top: 10px; right: 10px;"><strong>1 person</strong> is on right now.</p>
+    <br>
+    <br>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.min.js"></script>
     <script
             src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.js"
